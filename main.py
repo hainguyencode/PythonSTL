@@ -32,9 +32,16 @@ cmd = 'pwd'
 # for parts in [ ('/', 'usr', 'local') ]:
 #     print os.path.join(*parts)
 # cmd = path + ' ' + os.path.join(*parts) 
+# print run(cmd)
 
 #test expanduser(): auto expand variable in a path
-print os.path.expanduser('~'+run('whoami')) # '~' is a variable and it's expanded to /Users
+# print os.path.expanduser('~'+run('whoami')) # '~' is a variable and it's expanded to /Users
+
+#test normpath()
+cmd = path + ' ' + os.path.normpath('/usr//local//')
+print cmd
+print run(cmd)
+
 
 
 

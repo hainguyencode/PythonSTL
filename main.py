@@ -29,10 +29,12 @@ cmd = 'pwd'
 # print os.path.splitext("/usr/local/test.txt") # --> ('/usr/local/test', '.txt')
 
 #test join: to buid path
-for parts in [ ('/', 'usr', 'local') ]:
-    print os.path.join(*parts)
-cmd = path + ' ' + os.path.join(*parts) 
-print run(cmd)
+# for parts in [ ('/', 'usr', 'local') ]:
+#     print os.path.join(*parts)
+# cmd = path + ' ' + os.path.join(*parts) 
+
+#test expanduser(): auto expand variable in a path
+print os.path.expanduser('~'+run('whoami')) # '~' is a variable and it's expanded to /Users
 
 
 

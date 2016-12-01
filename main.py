@@ -17,7 +17,13 @@ def run(command):
 # print run("ps -au $(whoami)")
 
 # test split()
-# print os.path.split(run("pwd")) #return tuple
+# cmd = "pwd"
+# print os.path.split(run(cmd)) #return tuple: dirname + basename
 # print os.path.basename(run("pwd")) #file name
 # print os.path.dirname(run("pwd"))   #parent path
+
+#test splittext
+# print os.path.splitext("/usr/local/test.txt") # --> ('/usr/local/test', '.txt')
+
+
 

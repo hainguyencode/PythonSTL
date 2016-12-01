@@ -1,5 +1,6 @@
 import os.path
 import commands
+import time
 from matplotlib.font_manager import path
 
 
@@ -38,10 +39,16 @@ cmd = 'pwd'
 # print os.path.expanduser('~'+run('whoami')) # '~' is a variable and it's expanded to /Users
 
 #test normpath()
-cmd = path + ' ' + os.path.normpath('/usr//local//')
-print cmd
-print run(cmd)
+# cmd = path + ' ' + os.path.normpath('/usr//local//')
+# print cmd
+# print run(cmd)
 
+#file info
+print __file__  # path for this file
+print time.ctime(os.path.getatime(__file__))    #access time
+print time.ctime(os.path.getmtime(__file__))    #modify time
+print time.ctime(os.path.getctime(__file__))    #change time
+print os.path.getsize(__file__)    #size
 
 
 

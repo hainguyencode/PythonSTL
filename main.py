@@ -1,6 +1,7 @@
 import os.path
 import commands
 import time
+import glob
 from matplotlib.font_manager import path
 
 
@@ -51,10 +52,36 @@ cmd = 'pwd'
 # print os.path.getsize(__file__)    #size
 
 #file testing
-filenames = [__file__, '/usr/local/bin']
-for file in filenames:
-    if os.path.exists(file):
-        print 'File: ', 'is file ', os.path.isfile(file), 'is dir: ', os.path.isdir(file)
+# filenames = [__file__, '/usr/local/bin']
+# for file in filenames:
+#     if os.path.exists(file):
+#         print 'File: ', 'is file ', os.path.isfile(file), 'is dir: ', os.path.isdir(file)
+
+#traversing a dir
+
+# def traverseDir(arg, dir, names):
+#     if os.path.exists(dir):
+#         for name in names:
+#             subname = os.path.join(dir, name)
+#             if os.path.isdir(subname):
+#                 print ' %s/' % name
+#             else:
+#                 print ' %s' % name
+# os.path.walk(os.path.pardir, traverseDir, 'haint test')                
+
+def traverseDir(path, inVisibleDir):
+    result = []
+    if inVisibleDir == True:
+        pathSearch = ( (path + '/*'), (path + '/.*') )
+    else:
+        pathSearch = ( (path + '/*'), (path + '/.*') )
+    for myPath in pathSearch:
+        print myPath
+        for path in glob.glob(myPath):
+            print '\t', path
+            result.append(path)
+    return result
+print traverseDir(os.path.dirname(__file__), True)
 
 
 

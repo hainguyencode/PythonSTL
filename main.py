@@ -44,11 +44,18 @@ cmd = 'pwd'
 # print run(cmd)
 
 #file info
-print __file__  # path for this file
-print time.ctime(os.path.getatime(__file__))    #access time
-print time.ctime(os.path.getmtime(__file__))    #modify time
-print time.ctime(os.path.getctime(__file__))    #change time
-print os.path.getsize(__file__)    #size
+# print __file__  # path for this file
+# print time.ctime(os.path.getatime(__file__))    #access time
+# print time.ctime(os.path.getmtime(__file__))    #modify time
+# print time.ctime(os.path.getctime(__file__))    #change time
+# print os.path.getsize(__file__)    #size
+
+#file testing
+filenames = [__file__, '/usr/local/bin']
+for file in filenames:
+    if os.path.exists(file):
+        print 'File: ', 'is file ', os.path.isfile(file), 'is dir: ', os.path.isdir(file)
+
 
 
 
